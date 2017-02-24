@@ -7,48 +7,51 @@
 #include "dk_tool.h"
 #include "malloc.h"
 #include "stdlib.h"
+#include "string.h"
+#include "memory.h"
 
 DK_coor *CreateCoor(int Size_c)
 {
-    DK_coor *Triangle = (DK_coor *) malloc(sizeof(DK_coor));
+    DK_coor *Triangle = (DK_coor *) malloc(Size_c * sizeof(DK_coor));
     if(NULL != Triangle)
     {
-        Triangle->x_coor = (DK_coor *)malloc(sizeof(DK_coor));
-        bzero(Triangle->x_coor, Size_c * sizeof(DK_coor));
-        
-        
+        memset(Triangle, 0, Size_c * sizeof(DK_coor));
+
+
     }
-    
+
     return Triangle;
 }
 
 
-float tru_scan()
+float read_tru(float min_s, float max_s)
 {
-    float a;
+    float sc_sym;
     int t;
     do
     {
-        t=scanf("%f",&a);
+        t=scanf("%f",&sc_sym);
         fflush(stdin);
-        if(t!=1) printf("%s","Invalid input. Try again.\n");
+        if(t!=1 || sc_sym<min_s || sc_sym>max_s) printf("%s","Invalid input. Try again.\n");
     }
-    while(t!=1);
-    return a;
+    while(t!=1 || sc_sym<min_s || sc_sym>max_s);
+    return sc_sym;
 }
 
-int* import()
+void import(DK_coor *rTriangle)
 {
-    
-        printf("Please enter dot A (-100000,000; 100000,000)");
-        **NumberPoint = tru_scan();
-        *(*NumberPoint) = tru_scan();
-        printf("Please enter dot B (-100000,000; 100000,000)");
-        **(NumberPoint + 1) = tru_scan();
-        *(*NumberPoint + 1) = tru_scan();
-        printf("Please enter dot C (-100000,000; 100000,000)");
-        **(NumberPoint + 2) = tru_scan();
-        *(*NumberPoint + 2) = tru_scan();
-    return ;
+    if (NULL != rTriangle) {
+        char mas[3] = {'A', 'B', 'C'};
+        for (int i = 0; i < 3; ++i) {
+            printf("Please enter dot %c (-100000.000; 100000.000)", mas[i]);
+            *(rTriangle+i)->x_coor = read_tru(-100000.000, 100000.000);
+            *(rTriangle+i)->y_coor = read_tru(-100000.000, 100000.000);
+        }
+    }
 }
 
+float calculate(DK_coor *RCTriangle)
+{
+    float rez=((*(RCTriangle+0)->x_coor-*(RCTriangle+2)->x_coor)*(*(RCTriangle+1)->y_coor - *(RCTriangle+2)->y_coor) - (*(RCTriangle+1)->x_coor - *(RCTriangle+2)->x_coor) * (*(RCTriangle+0)->y_coor - *(RCTriangle+3)->y_coor));
+    return rez;
+}
