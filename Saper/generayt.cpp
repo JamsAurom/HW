@@ -1,0 +1,63 @@
+//
+// Created by maksi on 3/14/2017.
+//
+
+#include <iostream>
+#include <cstdlib>
+#include "const.h"
+
+bool random_bool();
+
+void gener(int x, int y, int bump);
+
+void generayt_mine(int x, int y)
+{
+    switch(x)
+    {
+        case 10:
+        {
+            gener(x, y, 10);
+            break;
+        }
+        case 20:
+        {
+            gener(x, y, 20);
+            break;
+        }
+        case 30:
+        {
+            gener(x, y, 30);
+            break;
+        }
+        case 40:
+        {
+            gener(x, y, 50);
+            break;
+        }
+    }
+}
+
+void gener(int x, int y, int bump)
+{
+    int g_bump=0;
+    do
+        for (int i = 0; i < x; ++i) {
+            for (int j = 0; j < y; ++j) {
+                if (g_bump<bump && *(*(array_field+i)+j)!=true)
+                {
+                    *(*(array_field+i)+j)=random_bool();
+                    g_bump++;
+                }
+            }
+        }
+    while (!(g_bump<bump));
+}
+
+bool random_bool()
+{
+    bool rez;
+    int randomith;
+    randomith = rand() %2;
+    if (randomith==1) rez = true; else rez = false;
+    return rez;
+}
