@@ -17,7 +17,7 @@ public:
         int x = CW_USEDEFAULT, int y = 0,
         int width = CW_USEDEFAULT, int height = 0,
         UINT classStile = CS_HREDRAW | CS_VREDRAW,
-        DWORD windowStyle = WS_OVERLAPPEDWINDOW,
+        DWORD windowStyle = WS_OVERLAPPED | WS_MINIMIZEBOX | WS_SYSMENU,
         HWND hParent = NULL);
 
     HWND GerHWnd() { return hWnd;}
@@ -25,4 +25,20 @@ public:
 protected:
     HWND hWnd;
     WNDCLASSEX wc;
+};
+
+class Time {
+public:
+    Time(LPCTSTR windowsName, HINSTANCE hInst, int cmdShow,
+         LRESULT(WINAPI *pWndProc)(HWND, UINT, WPARAM, LPARAM),
+         LPCTSTR menuName = NULL,
+         int x = CW_USEDEFAULT, int y = 0,
+         int width = CW_USEDEFAULT, int height = 0,
+         UINT classStile = CS_HREDRAW | CS_VREDRAW,
+         DWORD windowStyle = WS_CHILD,
+         HWND hParent = NULL);
+
+protected:
+    HWND hTime;
+    WNDCLASSEX wcTime;
 };

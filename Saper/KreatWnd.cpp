@@ -16,14 +16,17 @@ KWnd::KWnd(LPCTSTR windowsName, HINSTANCE hInst, int cmdShow, LRESULT (WINAPI *p
 {
     char szClassName[] = "KWndClass";
 
+    //hPict0 = (HBITMAP)LoadImage( hInst, i0, IMAGE_BITMAP, 20, 20, LR_LOADFROMFILE);
+
+
     wc.cbSize = sizeof(wc);
     wc.style = classStile;
     wc.lpfnWndProc = pWndProc;
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     wc.hInstance = hInst;
-    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-//    wc.hIcon = LoadImage(File_icon, IDI_APPLICATION);
+//    wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    wc.hIcon = (HICON)LoadImage(NULL, (LPCTSTR)"ICON.ico", IMAGE_ICON, 30, 30, LR_LOADFROMFILE);
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
     wc.lpszMenuName = menuName;

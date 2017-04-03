@@ -17,9 +17,16 @@ extern int x_main, y_main;
 
 extern int x_size, y_size;
 
-extern bool **array_field;
+extern int **array_field;
 extern bool **array_visited;
-extern HWND **array_window_butten;
+extern int **array_window_butten;
 
+extern int GEN_BUMB;
+
+//typedef struct cell
+//{
+//    int visite;
+//    int bumb;
+//} cell_all;
 
 #endif //SAPER_CONST_H

@@ -16,8 +16,10 @@ int x_main, y_main;
 
 int x_size, y_size;
 
-bool **array_field;
+int **array_field;
 bool **array_visited;
-HWND **array_window_butten;
+int **array_window_butten;
+
+int GEN_BUMB;
 
 #endif //SAPER_CONST_MAIN_H

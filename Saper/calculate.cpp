@@ -35,13 +35,13 @@ void Bypassing_cover(int x, int y) {
 
 int adjacentMines(int x, int y)
 {
-    if (array_field) return -1;
+    if (array_field[x][y] == 1) return -1;
     else{
         int rez=0;
         for (int i = -1; i < 2; ++i) {
             for (int j = -1; j <2 ; ++j) {
                 if (x+i >= 0 && y+j >= 0 && x+i < x_main && y+j < y_main)
-                    if (array_field[x+i][y+j]) rez++;
+                    if (array_field[x+i][y+j] == 1) rez++;
             }
         }
         return rez;
