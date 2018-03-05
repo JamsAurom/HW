@@ -1,0 +1,108 @@
+{
+  "jsonrpc": "2.0",
+  "total": 2,
+  "1": [
+    {
+      "FIELD2": 0,
+      "FIELD3": 123,
+      "FIELD4": 123,
+      "FIELD5": 123,
+      "FIELD6": 123
+    }
+  ],
+  "2": [
+    {
+      "FIELD2": 0,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    }
+  ],
+  "1": [
+    {
+      "FIELD2": 1,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 2,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 3,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 4,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 5,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 6,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 1,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 2,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 3,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 4,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 5,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    },
+    {
+      "FIELD2": 6,
+      "FIELD3": null,
+      "FIELD4": null,
+      "FIELD5": null,
+      "FIELD6": null
+    }
+  ]
+}
